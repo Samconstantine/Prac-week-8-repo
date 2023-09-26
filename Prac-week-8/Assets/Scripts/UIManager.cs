@@ -6,8 +6,10 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private ScoreKeeperScript scorekeeper;
-    [SerializeField] private TMP_Text scoreText;
-    private int score = 0;
+    [SerializeField] private TMP_Text scoreTextP1;
+    [SerializeField] private TMP_Text scoreTextP2;
+    private int scorePlayerOne = 0;
+    private int scorePlayerTwo = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,9 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score = scorekeeper.Score;
-        scoreText.SetText("Score: " + score);
+        scorePlayerOne = scorekeeper.ScorePlayerOne;
+        scoreTextP1.SetText("P1 Score: " + scorePlayerOne);
+        scorePlayerTwo = scorekeeper.ScorePlayerTwo;
+        scoreTextP2.SetText("P2 Score: " + scorePlayerTwo);
     }
 }

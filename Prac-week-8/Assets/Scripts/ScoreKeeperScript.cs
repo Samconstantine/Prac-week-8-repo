@@ -5,22 +5,27 @@ using UnityEngine;
 public class ScoreKeeperScript : MonoBehaviour
 {
     [SerializeField] private int points;
-    private int score;
-    public int Score
+    private int scorePlayerOne;
+    public int ScorePlayerOne
     {
         get
         {
-            return score;
+            return scorePlayerOne;
         }
-        set 
+    }
+    private int scorePlayerTwo;
+    public int ScorePlayerTwo
+    {
+        get
         {
-            score = value;
+            return scorePlayerTwo;
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        score = 10;
+        scorePlayerOne = 5;
+        scorePlayerTwo = 10;
     }
 
     // Update is called once per frame
@@ -30,6 +35,8 @@ public class ScoreKeeperScript : MonoBehaviour
     }
 
     public void IncreasePoints() {
-        score += points;
+        //find way to determine which player
+        scorePlayerOne += points;
+        scorePlayerTwo += points;
     }
 }
